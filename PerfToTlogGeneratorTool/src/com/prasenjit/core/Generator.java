@@ -14,7 +14,7 @@ public class Generator {
 	private static final String NEW_LINE_SEPARATOR = "\n";
 	private int dynamicCount = 0;
 	private static String sOpPath = null;
-	private String reportCSV = "TLOG_BILLING_" + new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss'.tmp'").format(new Date());
+	private String tlog = "TLOG_BILLING_" + new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss'.tmp'").format(new Date());
 	private FileWriter fileWriter = null;
 	private String[] token = null;
 	public static int lineNo = 0;
@@ -73,7 +73,7 @@ public class Generator {
 	public int tlogGenerator() throws IOException {
 		try {
 			int globalCount = 0;
-			fileWriter = new FileWriter(reportCSV);
+			fileWriter = new FileWriter(tlog);
 			token = (new Generator().readFile()).split(";");
 //			System.out.println(token + "\n");
 //			System.out.println(token[0]);
